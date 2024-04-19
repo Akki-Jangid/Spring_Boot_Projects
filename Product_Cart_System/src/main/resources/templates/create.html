@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+<meta charset="UTF-8">
+<title>Add Product</title>
+
+	<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" 
+	th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" 
+	crossorigin="anonymous"
+	media="screen">
+	
+	<th:block th:include="Layout/header"></th:block>
+</head>
+<body>
+<div class="container">
+  <h2 class=>Create Product</h2>
+  <form class="form-horizontal" th:object="${product}" th:action="@{/addProducts}" method="post" >
+    <!-- 
+     -->
+    <div class="form-group">
+    	<div class="col-sm-10">
+    		<input type="hidden" class="form-control" th:field="*{id}"/>
+    	</div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="text">Name:</label>
+      	<div class="col-sm-10">
+	      <input type="text" class="form-control" id="name" placeholder="Enter Name of the Product" th:field="*{name}" >
+    	</div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="text">Category:</label>
+      	<div class="col-sm-10">
+     		 <input type="text" class="form-control" id="category" placeholder="Enter Category of the Product" th:field="*{category}" />
+   		</div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="text">Brand:</label>
+      	<div class="col-sm-10">
+	      	<input type="text" class="form-control" id="brand" placeholder="Enter Brand of the Product" th:field="*{brand}" />
+    	</div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="text">Price:</label>
+      	<div class="col-sm-10">
+      		<input type="text" class="form-control" id="price" placeholder="Enter Price of the Product" th:field="*{price}" />
+      	</div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="text">Rating:</label>
+      	<div class="col-sm-10">
+      		<input type="text" class="form-control" id="rating" placeholder="Enter Rating of the Product" th:field="*{rating}" />
+      	</div>
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox"> Remember me</label>
+    </div>
+    <div class="form-group">
+		    <button type="submit" class="btn btn-primary">Submit</button>
+  	</div>
+  </form>
+</div>
+</body>
+</html>
